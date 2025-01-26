@@ -1,0 +1,9 @@
+.list {
+    list-style-type: none;
+}
+.button {
+    background-color: red;
+    color: white;
+    margin-left: 100px;
+    border-radius: 20%;
+}
