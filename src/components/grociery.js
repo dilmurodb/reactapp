@@ -27,11 +27,12 @@ function Grociery() {
     }
     
     const addItem = (grocieryItem) => {
-        setItems([...items, {
-            id: 4,
-            checked: false,
-            item: grocieryItem
-        }])
+       
+    }
+
+    const handleCheckbox = (id) => {
+        const listItems = items.map(item => item.id === id ? { ...item, checked: !item.checked} : item);
+        setItems(listItems)
     }
 
     return (
@@ -41,6 +42,7 @@ function Grociery() {
             <ul>{items.map(item => 
                 (<li className = "list" key={item.id}>
                     <input
+                    onChange = {() => handleCheckbox(item.id)}
                     type = "checkbox"
                     checked = {item.checked}
                     />
