@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-function Counter() {
+function Counter({length}) {
 
     const [name, setName] = useState("Elsa");
     const [count, setCount] = useState(0);
@@ -41,6 +41,7 @@ function Counter() {
             <button onClick={handleCountMinus}>Counter -</button>
             <button onClick={() => handleClick2("Susan")}>Click2</button>
             <button onClick={(e) => handleClick3(e)}>Click3</button>
+            <h2>Grociery List items count: {length}</h2>
         </main>
     )
 }
