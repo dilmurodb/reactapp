@@ -1,8 +1,20 @@
 import React from 'react'
 
-const AddItem = () => {
+const AddItem = ({newItem, setNewItem, handleSubmit}) => {
   return (
-    <div>AddItem</div>
+    <form>
+      <lable htmlFor='addItem'>Add item</lable>
+      <input
+        autoFocus
+        id='addItem'
+        type='text'
+        placeholder='Add item...'
+        required
+        // value={newItem}
+        onChange={(e) => setNewItem(e.target.value)}
+      />
+      <button type='submit'>Add item</button>
+    </form>
   )
 }
 
