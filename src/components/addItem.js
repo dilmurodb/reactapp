@@ -2,7 +2,7 @@ import React from 'react'
 
 const AddItem = ({newItem, setNewItem, handleSubmit}) => {
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <lable htmlFor='addItem'>Add item</lable>
       <input
         autoFocus
@@ -10,7 +10,7 @@ const AddItem = ({newItem, setNewItem, handleSubmit}) => {
         type='text'
         placeholder='Add item...'
         required
-        // value={newItem}
+        value={newItem}
         onChange={(e) => setNewItem(e.target.value)}
       />
       <button type='submit'>Add item</button>
