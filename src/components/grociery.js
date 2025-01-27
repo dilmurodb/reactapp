@@ -1,5 +1,6 @@
 
 import '../styles/grociery.css';
+import ItemsList from './itemsList'
 
 function Grociery({items, handleCheckbox, deleteItem}) {
 
@@ -19,17 +20,10 @@ function Grociery({items, handleCheckbox, deleteItem}) {
             <button onClick={addItem}>Add item</button>
             { items.length ? 
                 (
-                    <ul>{items.map(item => 
-                        (<li className = "list" key={item.id}>
-                            <input
-                            onChange = {() => handleCheckbox(item.id)}
-                            type = "checkbox"
-                            checked = {item.checked}
-                            />
-                            <label style = {(item.checked) ? { textDecoration: 'line-through'} : null}>{item.item}</label>
-                            <button onClick = {() => deleteItem(item.id)} className="button">delete</button>
-                        </li>))}
-                    </ul> 
+                   <ItemsList items={items}
+                              handleCheckbox={handleCheckbox}
+                              deleteItem={deleteItem}
+                    /> 
                 ) : (<p>Your list is empty</p>)
             }
         </main>
